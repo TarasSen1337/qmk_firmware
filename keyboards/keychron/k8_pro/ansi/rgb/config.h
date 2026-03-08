@@ -24,11 +24,17 @@
 #    define DRIVER_ADDR_2 0b1110100
 #    define DRIVER_1_LED_COUNT 47
 #    define DRIVER_2_LED_COUNT 40
+#    define DRIVER_LED_TOTAL 87
 #    define RGB_MATRIX_LED_COUNT (DRIVER_1_LED_COUNT + DRIVER_2_LED_COUNT)
 
 /* Set to infinit, which is use in USB mode by default */
-#    define RGB_MATRIX_TIMEOUT RGB_MATRIX_TIMEOUT_INFINITE
-
+#    define RGB_MATRIX_TIMEOUT 300000
+# ifdef RGB_MATRIX_CUSTOM_USER
+#    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CUSTOM_blurple_grad
+# endif
+#    define RGB_MATRIX_HUE_STEP 8
+#    define RGB_MATRIX_SAT_STEP 16
+#    define RGB_MATRIX_VAL_STEP 16
 /* Allow shutdown of led driver to save power */
 #    define RGB_MATRIX_DRIVER_SHUTDOWN_ENABLE
 /* Turn off backlight on low brightness to save power */
